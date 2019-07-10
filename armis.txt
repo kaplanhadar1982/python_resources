@@ -1,0 +1,65 @@
+Hi Hadar,
+This is Omri from Armis.
+
+Please follow these instructions to set up your Google account:
+Go to: www.gmail.com
+Enter your account name: hadar.kaplan@armis.com
+Enter the following password (You’ll be forced to change it after login): gvu3N5i63i
+Enter one of the following codes in the next step:
+76554188
+93760688
+61027906
+
+Go to “My Account” > Sign-In & Security > Enable 2 Step Verification > Follow the instructions
+
+
+—————————
+
+Useful links & guides: (Links are accessible only with your Armis account)
+
+Set up Armis email signature
+https://docs.google.com/document/d/1KkRuwtFZzV2eyl6D35sGuwm3E-tECkAo9qBRWsAb-DI/edit?usp=sharing
+
+For IT related issues & requests, please visit Armis Service Desk Portal
+https://armis-security.atlassian.net/servicedesk/customer/portals
+
+For teams & general conversation, join Armis @ Slack
+https://armis-security.slack.com/
+
+—————————
+
+If you have any questions or issues settings up don't hesitate to contact me.
+Good luck and have a great week!
+
+omri.tsabari@armis.com
+
+
+
+
+
+
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+CREATE TABLE votes
+(
+  user_id integer NOT NULL,
+  post_id integer NOT NULL,
+  created_on timestamp,
+  PRIMARY KEY (user_id, post_id),
+  CONSTRAINT votes_user_id_fkey FOREIGN KEY (user_id)
+      REFERENCES users (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT votes_post_id_fkey FOREIGN KEY (post_id)
+      REFERENCES posts (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+);
